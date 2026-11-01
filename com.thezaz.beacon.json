@@ -1,0 +1,58 @@
+{
+  "id": "com.thezaz.beacon",
+  "runtime": "org.gnome.Platform",
+  "runtime-version": "51",
+  "sdk": "org.gnome.Sdk",
+  "command": "Beacon",
+  "finish-args": [
+    "--share=network",
+    "--filesystem=xdg-documents",
+    "--socket=wayland",
+    "--socket=fallback-x11",
+    "--share=ipc",
+    "--socket=pulseaudio"
+  ],
+  "modules": [
+    {
+      "name": "Beacon",
+      "buildsystem": "simple",
+      "build-commands": [
+        "cp -R ./Beacon ${FLATPAK_DEST}/bin/",
+        "chmod +x ${FLATPAK_DEST}/bin/Beacon",
+        "install -Dm755 ${FLATPAK_ID}.sh -t ${FLATPAK_DEST}/bin",
+        "install -Dm644 ${FLATPAK_ID}.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo",
+        "install -Dm644 ${FLATPAK_ID}.desktop -t ${FLATPAK_DEST}/share/applications",
+        "install -Dm644 ${FLATPAK_ID}-url-handler.desktop -t ${FLATPAK_DEST}/share/applications",
+        "install -Dm644 ${FLATPAK_ID}.xml -t ${FLATPAK_DEST}/share/mime/packages",
+        "for icon_size in 16 32 128 256; do install -Dm644 icons/app/${icon_size}.png ${FLATPAK_DEST}/share/icons/hicolor/${icon_size}x${icon_size}/apps/${FLATPAK_ID}.png; done",
+        "for icon_size in 16 32 128 256; do install -Dm644 icons/app/${icon_size}@2x.png ${FLATPAK_DEST}/share/icons/hicolor/${icon_size}x${icon_size}@2x/apps/${FLATPAK_ID}.png; done",
+        "for mime_type in document preset script updatedelta; do for icon_size in 16 32 128 256; do install -Dm644 icons/${mime_type}/${icon_size}.png ${FLATPAK_DEST}/share/icons/hicolor/${icon_size}x${icon_size}/mimetypes/${FLATPAK_ID}.${mime_type}.png; done; done;",
+        "for mime_type in document preset script updatedelta; do for icon_size in 16 32 128 256; do install -Dm644 icons/${mime_type}/${icon_size}@2x.png ${FLATPAK_DEST}/share/icons/hicolor/${icon_size}x${icon_size}@2x/mimetypes/${FLATPAK_ID}.${mime_type}.png; done; done;"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "only-arches": [
+            "aarch64"
+          ],
+          "url": "https://releases.usebeacon.app/2.4.0.6/arm64/beacon.tgz",
+          "sha256": "62a2bad84d12daf54b8c67c96ba1554a65592dd8b0cdf665e4b42920efc406f3",
+          "strip-components": 0
+        },
+        {
+          "type": "archive",
+          "only-arches": [
+            "x86_64"
+          ],
+          "url": "https://releases.usebeacon.app/2.4.0.6/x64/beacon.tgz",
+          "sha256": "397b66b9141a57bb3f3f6c28673772e33a94d980903df3f2a5032e90f63802dd",
+          "strip-components": 0
+        },
+        {
+          "type": "file",
+          "path": "com.thezaz.beacon.metainfo.xml"
+        }
+      ]
+    }
+  ]
+}

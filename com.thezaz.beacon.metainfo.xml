@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.thezaz.beacon</id>
+  <name>Beacon</name>
+  <summary>Server manager for Ark: Survival Ascended and Evolved</summary>
+  <developer id="com.thezaz">
+    <name>The ZAZ Studios</name>
+  </developer>
+  <metadata_license>CC-BY-4.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <branding>
+    <color type="primary" scheme_preference="light">#af7faf</color>
+    <color type="primary" scheme_preference="dark">#a599a5</color>
+  </branding>
+  <content_rating type="oars-1.1"/>
+  <icon type="stock">com.thezaz.beacon</icon>
+  <description>
+    <p>**Over 295 loot drops and counting**</p>
+    <p>Normal drops, cave crates, boss loot, beaver dams… whatever you want to change. Plus support for custom loot drops, such as those provided by mod maps or not officially supported by Ark. Plus, Beacon has support for an additional 603 unofficial loot drops, such as the Orbital Supply Drop events and creature inventories.</p>
+    <p>**No need to start from scratch**</p>
+    <p>Beacon has a library of community-maintained projects, both in-app and on the web, ready to be deployed to your own server.</p>
+    <p>Beacon also has a library of templates for smaller chunks of the loot config process. This makes it easy to include a curated selection of items in your drops without all the work of starting from scratch.</p>
+    <p>**Easiest, most reliable way to configure a server**</p>
+    <p>For users hosted with Nitrado, Beacon can handle the entire configuration process automatically. It will start and stop the server, change settings, create backups, and update files as needed to ensure your server - or a whole cluster of servers - are configured correctly. And it can do it while you get a coffee.</p>
+    <p>Not with Nitrado? No problem, Beacon supports FTP, FTP with TLS, and SFTP servers too. While it can't restart the server for you, it can still update your files automatically.</p>
+    <p>No FTP either? Copy &amp; Paste to the rescue. Simply copy your entire config file, and with a single click, Beacon will update your config so you can paste it back where it needs to go.</p>
+    <p>And of course, you can just save the config files to your computer too, which is great for single player.</p>
+    <p>**Takes user privacy seriously**</p>
+    <p>Config files contain server passwords. So Beacon encrypts those with your own 4096-bit RSA private key. FTP credentials or Nitrado access tokens? Yep, those too. That private key enables Beacon's cloud features too, yet you don't even need to setup an account! For users who choose to create an account, even your email address is stored as a one-way hash! Beacon and the Beacon API take special care to enable true privacy and user data protection.</p>
+    <p>**Plus mods and more**</p>
+    <p>Users wanting to add mod items to their loot drops only need a list of the admin spawn codes. Give Beacon the link to the web page with the codes, or copy &amp; paste them, and Beacon can do the rest. No special formatting required, Beacon will scour the content for spawn codes.</p>
+    <p>Mod authors can also add support for their mod directly to Beacon. The items show up to all Beacon users automatically, and Beacon will also maintain a spawn codes page just for your mod. The engrams list can be updated at any time from within Beacon, or Beacon's API can pull the engrams list from your own server (or Steam page) every few hours.</p>
+  </description>
+  <launchable type="desktop-id">com.thezaz.beacon.desktop</launchable>
+  <url type="homepage">https://usebeacon.app</url>
+  <url type="bugtracker">https://github.com/thommcgrath/Beacon/issues</url>
+  <url type="vcs-browser">https://github.com/thommcgrath/Beacon</url>
+  <url type="contribute">https://help.usebeacon.app/contributing/</url>
+  <url type="faq">https://help.usebeacon.app/troubleshooting/faq/</url>
+  <url type="contact">https://usebeacon.app/help/contact</url>
+  <releases>
+    <release version="2.4.0.6" date="2026-11-01">
+      <url type="details">https://usebeacon.app/history?stage=3#build20400306</url>
+      <description>
+        <p>**New Features**</p>
+        <ul>
+          <li>Beacon is now available for Linux on Flathub! For Mac and Windows users, this version is effectively the same as 2.4.0.5.</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+  <recommends>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <display_length compare="ge">1280</display_length>
+  </recommends>
+  <screenshots>
+    <screenshot type="default">
+      <image scale="2">https://raw.githubusercontent.com/thommcgrath/flathub/master/loot@2x.png</image>
+      <caption>Edit any Ark loot source</caption>
+    </screenshot>
+    <screenshot>
+      <image scale="2">https://raw.githubusercontent.com/thommcgrath/flathub/master/clustering@2x.png</image>
+      <caption>Over 400 settings supported</caption>
+    </screenshot>
+    <screenshot>
+      <image scale="2">https://raw.githubusercontent.com/thommcgrath/flathub/master/fibercraft@2x.png</image>
+      <caption>Setup a fibercraft server in seconds.</caption>
+    </screenshot>
+  </screenshots>
+</component>
